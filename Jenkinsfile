@@ -39,12 +39,10 @@ pipeline{
 		 sh 'cp -r /home/ahamedbasha/.m2/target .'
 
                    sh 'docker build . -t ahamedbasha55/test:$Docker_tag'
-
-			 {
-				    
-				  sh 'docker login -u ahamedbasha55 -p Allah786#'
-				  sh 'docker push ahamedbasha55/test:$Docker_tag'
-			}
+	    
+		   sh 'docker login -u ahamedbasha55 -p Allah786#'
+		   sh 'docker push ahamedbasha55/test:$Docker_tag'
+			
                        }
                     }
                  }
