@@ -25,7 +25,7 @@ pipeline{
             }
                   steps{
                       script{
-                      withSonarQubeEnv('sonarserver') { 
+#                      withSonarQubeEnv('sonarserver') { 
 #                      sh "mvn sonar:sonar"
 #                       }
 #                      timeout(time: 1, unit: 'HOURS') {
@@ -46,8 +46,11 @@ pipeline{
               steps{
                   script{
 		 sh 'cp -r /home/ahamedbasha/.m2/target .'
+
                    sh 'docker build . -t ahamedbasha55/test:$Docker_tag'
-		   withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
+
+		 #  withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')])
+			 {
 				    
 				  sh 'docker login -u ahamedbasha55 -p Allah786#
 				  sh 'docker push ahamedbasha55/test:$Docker_tag'
