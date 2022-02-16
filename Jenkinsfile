@@ -25,15 +25,6 @@ pipeline{
             }
                   steps{
                       script{
-#                      withSonarQubeEnv('sonarserver') { 
-#                      sh "mvn sonar:sonar"
-#                       }
-#                      timeout(time: 1, unit: 'HOURS') {
-#                      def qg = waitForQualityGate()
-#                      if (qg.status != 'OK') {
-#                           error "Pipeline aborted due to quality gate failure: ${qg.status}"
-#                      }
-#                    }
 		    sh "mvn clean install"
                   }
                 }  
@@ -57,25 +48,6 @@ pipeline{
                        }
                     }
                  }
-		 
-#		stage('ansible playbook'){
-#			steps{
-#			 	script{
-#				    sh '''final_tag=$(echo $Docker_tag | tr -d ' ')
-#				     echo ${final_tag}test
-#				     sed -i "s/docker_tag/$final_tag/g"  deployment.yaml
-#				     '''
-#				    ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
-#				}
-#			}
-#		}
-#		
-#	
-#		
-#               }
-	       
-	       
-	       
-	      
+		 	      
     
 }
