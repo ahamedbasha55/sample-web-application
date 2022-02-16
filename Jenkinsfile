@@ -42,7 +42,7 @@ pipeline{
 
 			 {
 				    
-				  sh 'docker login -u ahamedbasha55 -p Allah786#
+				  sh 'docker login -u ahamedbasha55 -p Allah786#'
 				  sh 'docker push ahamedbasha55/test:$Docker_tag'
 			}
                        }
