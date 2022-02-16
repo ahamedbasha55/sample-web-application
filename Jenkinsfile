@@ -49,7 +49,6 @@ pipeline{
 
                    sh 'docker build . -t ahamedbasha55/test:$Docker_tag'
 
-		 #  withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')])
 			 {
 				    
 				  sh 'docker login -u ahamedbasha55 -p Allah786#
