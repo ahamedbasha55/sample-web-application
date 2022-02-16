@@ -27,7 +27,7 @@ pipeline{
                 {
               steps{
                   script{
-		 sh 'cp -r /home/ahamedbasha/.jenkins/workspace/pipeline-docker/target .'
+		 sh 'cp -r target/*.war .'
 
                    sh 'docker build . -t ahamedbasha55/test:$Docker_tag'
 	    
