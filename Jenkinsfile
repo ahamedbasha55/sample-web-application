@@ -15,7 +15,7 @@ pipeline{
         stages{
 
 
-              stage('Quality Gate Statuc Check'){
+              stage('building'){
 
                agent {
                 docker {
@@ -41,16 +41,16 @@ pipeline{
 
 
 
-              stage('build')
+              stage('docker build')
                 {
               steps{
                   script{
-		 sh 'cp -r ../devops-training@2/target .'
-                   sh 'docker build . -t deekshithsn/devops-training:$Docker_tag'
+		 sh 'cp -r /home/ahamedbasha/.m2/target .'
+                   sh 'docker build . -t ahamedbasha55/test:$Docker_tag'
 		   withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
 				    
-				  sh 'docker login -u deekshithsn -p $docker_password'
-				  sh 'docker push deekshithsn/devops-training:$Docker_tag'
+				  sh 'docker login -u ahamedbasha55 -p Allah786#
+				  sh 'docker push ahamedbasha55/test:$Docker_tag'
 			}
                        }
                     }
